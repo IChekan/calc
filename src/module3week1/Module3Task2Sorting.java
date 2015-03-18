@@ -1,4 +1,4 @@
-package calculator;
+package module3week1;
 
 /**
  * Created by Ihar_Chekan on 3/18/2015.

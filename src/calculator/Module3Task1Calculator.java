@@ -52,8 +52,6 @@ public class Module3Task1Calculator {
     private String result = "0";
     private String math = "na";
     private float floatA = 0;
-    private float floatB = 0;
-    private String splitString;
 
     //write something at launch
     @FXML
@@ -126,6 +124,7 @@ public class Module3Task1Calculator {
         }
 
         for(int n=0; n<arrayNumbersEntered.length -1; n++) {
+            String splitString;
             if (n==0) {
                 splitString = arrayNumbersEntered[n] + arraySymbolsEntered[n + 1] + arrayNumbersEntered[n + 1];
             }
@@ -144,7 +143,7 @@ public class Module3Task1Calculator {
         String strB = splitString.substring(splitString.indexOf(math) +1);
 
         floatA = new Float(strA);
-        floatB = Float.parseFloat(strB);
+        Float floatB = Float.parseFloat(strB);
 
         calculations(floatA, floatB);
 

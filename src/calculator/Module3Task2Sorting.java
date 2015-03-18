@@ -6,9 +6,8 @@ package calculator;
 public class Module3Task2Sorting {
 
     public static String[] sortArrayNumbers (String[] arrayInput) {
-        String[] arrayOutput = arrayInput;
-        sortArray(arrayOutput);
-        return arrayOutput;
+        sortArray(arrayInput);
+        return arrayInput;
     }
 
     public static void sortArray(String[] arr) {

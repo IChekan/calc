@@ -3,10 +3,12 @@ package calculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
-public class Calc {
+public class Module3Task1Calculator {
 
+    //map of all controls
     @FXML
     Button button0;
     @FXML
@@ -43,19 +45,24 @@ public class Calc {
     Label outputField;
     @FXML
     Label inputField;
+    @FXML
+    CheckBox sortingCheckbox;
 
     private String input = "";
     private String result = "0";
     private String math = "na";
     private float floatA = 0;
     private float floatB = 0;
+    private String splitString;
 
+    //write something at launch
     @FXML
     void initialize() {
         inputField.setText(input);
         outputField.setText("Press something :)");
     }
 
+    //set desired actions to all buttons
     @FXML
     void buttonInit (ActionEvent event) {
         if (event.getTarget() instanceof Button) {
@@ -99,6 +106,7 @@ public class Calc {
         inputField.setText(input);
     }
 
+    // clear button action
     private void buttonClearAction () {
         input = "";
         result = "0";
@@ -106,11 +114,34 @@ public class Calc {
         outputField.setText("cleared");
     }
 
+    // "=" button action
     private void buttonEqualAction (String inputEqual) {
-        mathAnalyzer(inputEqual);
 
-        String strA = inputEqual.substring(0, inputEqual.indexOf(math));
-        String strB = inputEqual.substring(inputEqual.indexOf(math) +1);
+        String[] arraySymbolsEntered = inputEqual.split("([0-9]+)");
+        String[] arrayNumbersEntered = inputEqual.split("(\\-|\\+|\\*|\\/)");
+
+        //this "if" was added for Module2Task2Sorting hometask
+        if (sortingCheckbox.isSelected()) {
+            arrayNumbersEntered = Module3Task2Sorting.sortArrayNumbers(arrayNumbersEntered);
+        }
+
+        for(int n=0; n<arrayNumbersEntered.length -1; n++) {
+            if (n==0) {
+                splitString = arrayNumbersEntered[n] + arraySymbolsEntered[n + 1] + arrayNumbersEntered[n + 1];
+            }
+            else {
+                splitString = result + arraySymbolsEntered[n + 1] + arrayNumbersEntered[n + 1];
+            }
+            executeStart(splitString);
+        }
+        outputField.setText(result);
+    }
+
+    private void executeStart(String splitString) {
+        mathAnalyzer(splitString);
+
+        String strA = splitString.substring(0, splitString.indexOf(math));
+        String strB = splitString.substring(splitString.indexOf(math) +1);
 
         floatA = new Float(strA);
         floatB = Float.parseFloat(strB);
@@ -118,18 +149,16 @@ public class Calc {
         calculations(floatA, floatB);
 
         result = Float.toString(floatA);
-
-        outputField.setText(result);
     }
 
-    private void mathAnalyzer (String inputEqual) {
-        if (inputEqual.contains("/")) {
+    private void mathAnalyzer (String splitString) {
+        if (splitString.contains("/")) {
             math = "/";}
-        else if (inputEqual.contains("*")) {
+        else if (splitString.contains("*")) {
             math = "*";}
-        else if (inputEqual.contains("+")) {
+        else if (splitString.contains("+")) {
             math = "+";}
-        else if (inputEqual.contains("-")) {
+        else if (splitString.contains("-")) {
             math = "-";}
         else {
             outputField.setText("ERROR");

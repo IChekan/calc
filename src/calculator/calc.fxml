@@ -10,40 +10,33 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Calc">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Module3Task1Calculator">
    <children>
       <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="350.0">
          <children>
-            <Button fx:id="button1" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#buttonInit" text="1" />
-            <Button fx:id="button2" layoutX="100.0" layoutY="200.0" mnemonicParsing="false" onAction="#buttonInit" text="2" />
-            <Button fx:id="button3" layoutX="175.0" layoutY="200.0" mnemonicParsing="false" onAction="#buttonInit" text="3" />
-            <Button fx:id="buttonClear" layoutX="271.0" layoutY="143.0" mnemonicParsing="false" onAction="#buttonInit" text="Clear" />
-            <Button fx:id="button4" layoutX="25.0" layoutY="242.0" mnemonicParsing="false" onAction="#buttonInit" text="4" />
-            <Button fx:id="button5" layoutX="100.0" layoutY="242.0" mnemonicParsing="false" onAction="#buttonInit" text="5" />
-            <Button fx:id="button6" layoutX="175.0" layoutY="242.0" mnemonicParsing="false" onAction="#buttonInit" text="6" />
-            <Button fx:id="button7" layoutX="25.0" layoutY="288.0" mnemonicParsing="false" onAction="#buttonInit" text="7" />
-            <Button fx:id="button8" layoutX="100.0" layoutY="288.0" mnemonicParsing="false" onAction="#buttonInit" text="8" />
-            <Button fx:id="button9" layoutX="175.0" layoutY="288.0" mnemonicParsing="false" onAction="#buttonInit" text="9" />
-            <Button fx:id="button0" layoutX="100.0" layoutY="335.0" mnemonicParsing="false" onAction="#buttonInit" text="0" />
-            <Button fx:id="buttonMultiply" layoutX="271.0" layoutY="215.0" mnemonicParsing="false" onAction="#buttonInit" text="*" />
-            <Button fx:id="buttonDivide" layoutX="271.0" layoutY="257.0" mnemonicParsing="false" onAction="#buttonInit" text="/" />
-            <Button fx:id="buttonMinus" layoutX="271.0" layoutY="297.0" mnemonicParsing="false" onAction="#buttonInit" text="-" />
-            <Button fx:id="buttonPlus" layoutX="271.0" layoutY="335.0" mnemonicParsing="false" onAction="#buttonInit" text="+" />
-            <ToolBar layoutX="57.0" layoutY="37.0">
-               <items>
-                  <Label fx:id="outputField" layoutX="57.0" layoutY="37.0" prefHeight="31.0" prefWidth="186.0" textFill="#534cc9">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </items>
-            </ToolBar>
-            <Button fx:id="buttonEqual" layoutX="221.0" layoutY="374.0" mnemonicParsing="false" onAction="#buttonInit" text="=" />
-            <ToolBar layoutX="57.0" layoutY="98.0">
-               <items>
-                  <Label fx:id="inputField" layoutX="57.0" layoutY="98.0" prefHeight="31.0" prefWidth="179.0" textFill="#5d973c" />
-               </items>
-            </ToolBar>
+            <Button fx:id="button1" layoutX="25.0" layoutY="159.0" mnemonicParsing="false" onAction="#buttonInit" text="1" />
+            <Button fx:id="button2" layoutX="100.0" layoutY="159.0" mnemonicParsing="false" onAction="#buttonInit" text="2" />
+            <Button fx:id="button3" layoutX="175.0" layoutY="159.0" mnemonicParsing="false" onAction="#buttonInit" text="3" />
+            <Button fx:id="buttonClear" layoutX="241.0" layoutY="128.0" mnemonicParsing="false" onAction="#buttonInit" prefHeight="31.0" prefWidth="76.0" text="Clear" />
+            <Button fx:id="button4" layoutX="25.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonInit" text="4" />
+            <Button fx:id="button5" layoutX="100.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonInit" text="5" />
+            <Button fx:id="button6" layoutX="175.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonInit" text="6" />
+            <Button fx:id="button7" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#buttonInit" text="7" />
+            <Button fx:id="button8" layoutX="100.0" layoutY="257.0" mnemonicParsing="false" onAction="#buttonInit" text="8" />
+            <Button fx:id="button9" layoutX="175.0" layoutY="257.0" mnemonicParsing="false" onAction="#buttonInit" text="9" />
+            <Button fx:id="button0" layoutX="100.0" layoutY="304.0" mnemonicParsing="false" onAction="#buttonInit" text="0" />
+            <Button fx:id="buttonMultiply" layoutX="240.0" layoutY="175.0" mnemonicParsing="false" onAction="#buttonInit" text="*" />
+            <Button fx:id="buttonDivide" layoutX="288.0" layoutY="175.0" mnemonicParsing="false" onAction="#buttonInit" text="/" />
+            <Button fx:id="buttonMinus" layoutX="240.0" layoutY="226.0" mnemonicParsing="false" onAction="#buttonInit" text="-" />
+            <Button fx:id="buttonPlus" layoutX="285.0" layoutY="226.0" mnemonicParsing="false" onAction="#buttonInit" text="+" />
+            <Label fx:id="outputField" layoutX="36.0" layoutY="21.0" prefHeight="31.0" prefWidth="186.0" textFill="#534cc9">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonEqual" layoutX="241.0" layoutY="289.0" mnemonicParsing="false" onAction="#buttonInit" prefHeight="31.0" prefWidth="76.0" text="=" />
+            <Label fx:id="inputField" layoutX="39.0" layoutY="72.0" prefHeight="31.0" prefWidth="179.0" textFill="#5d973c" />
+            <CheckBox fx:id="sortingCheckbox" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#buttonInit" prefHeight="21.0" prefWidth="95.0" text="Sorting" />
          </children>
       </Pane>
    </children>

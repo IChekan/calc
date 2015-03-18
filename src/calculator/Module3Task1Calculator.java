@@ -118,7 +118,7 @@ public class Module3Task1Calculator {
         String[] arraySymbolsEntered = inputEqual.split("([0-9]+)");
         String[] arrayNumbersEntered = inputEqual.split("(\\-|\\+|\\*|\\/)");
 
-        //this "if" was added for Module2Task2Sorting hometask
+        //this "if" was added for Module3Task2Sorting hometask
         if (sortingCheckbox.isSelected()) {
             arrayNumbersEntered = Module3Task2Sorting.sortArrayNumbers(arrayNumbersEntered);
         }

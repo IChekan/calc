@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import module3week2.Module3Task2SpeedTest;
+import org.apache.commons.lang3.StringUtils;
 
 public class Module3Task1Calculator {
 
@@ -47,6 +49,16 @@ public class Module3Task1Calculator {
     Label inputField;
     @FXML
     CheckBox sortingCheckbox;
+    @FXML
+    Button buttonBackspace;
+    @FXML
+    Button buttonAddSpeedTest;
+    @FXML
+    Button buttonGetSpeedTest;
+    @FXML
+    Button buttonDelSpeedTest;
+    @FXML
+    Button buttonHelp;
 
     private String input = "";
     private String result = "0";
@@ -96,6 +108,15 @@ public class Module3Task1Calculator {
                 buttonClearAction();
             else if (event.getTarget() == buttonEqual)
                 buttonEqualAction(input);
+            else if (event.getTarget() == buttonBackspace) {
+                input = StringUtils.chop(input);
+                inputField.setText(input); }
+            else if (event.getTarget() == buttonAddSpeedTest)
+                buttonAddSpeedTestAction();
+            else if (event.getTarget() == buttonGetSpeedTest)
+                buttonGetSpeedTestAction();
+            else if (event.getTarget() == buttonDelSpeedTest)
+                buttonDelSpeedTestAction();
         }
     }
 
@@ -177,6 +198,27 @@ public class Module3Task1Calculator {
         else if (math == "-") {
             floatA = aFloat - bFloat;
         }
+    }
+
+    //was added for module3 week2 2nd task hometask
+    private void buttonAddSpeedTestAction () {
+        Integer listsLength = new Integer(input);
+        result = Module3Task2SpeedTest.testAddElement(listsLength);
+        outputField.setText(result);
+    }
+
+    //was added for module3 week2 2nd task hometask
+    private void buttonGetSpeedTestAction () {
+        Integer listsLength = new Integer(input);
+        result = Module3Task2SpeedTest.testGetElement(listsLength);
+        outputField.setText(result);
+    }
+
+    //was added for module3 week2 2nd task hometask
+    private void buttonDelSpeedTestAction () {
+        Integer listsLength = new Integer(input);
+        result = Module3Task2SpeedTest.testDelElement(listsLength);
+        outputField.setText(result);
     }
 
 }

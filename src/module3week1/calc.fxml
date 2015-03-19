@@ -29,14 +29,35 @@
             <Button fx:id="buttonDivide" layoutX="288.0" layoutY="175.0" mnemonicParsing="false" onAction="#buttonInit" text="/" />
             <Button fx:id="buttonMinus" layoutX="240.0" layoutY="226.0" mnemonicParsing="false" onAction="#buttonInit" text="-" />
             <Button fx:id="buttonPlus" layoutX="285.0" layoutY="226.0" mnemonicParsing="false" onAction="#buttonInit" text="+" />
-            <Label fx:id="outputField" layoutX="36.0" layoutY="21.0" prefHeight="31.0" prefWidth="186.0" textFill="#534cc9">
+            <Label fx:id="outputField" layoutX="36.0" layoutY="21.0" prefHeight="53.0" prefWidth="283.0" textAlignment="JUSTIFY" textFill="#534cc9" wrapText="true">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
             <Button fx:id="buttonEqual" layoutX="241.0" layoutY="289.0" mnemonicParsing="false" onAction="#buttonInit" prefHeight="31.0" prefWidth="76.0" text="=" />
-            <Label fx:id="inputField" layoutX="39.0" layoutY="72.0" prefHeight="31.0" prefWidth="179.0" textFill="#5d973c" />
+            <Label fx:id="inputField" layoutX="39.0" layoutY="86.0" prefHeight="31.0" prefWidth="179.0" textFill="#5d973c" />
             <CheckBox fx:id="sortingCheckbox" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#buttonInit" prefHeight="21.0" prefWidth="95.0" text="Sorting" />
+            <Button fx:id="buttonBackspace" layoutX="241.0" layoutY="86.0" mnemonicParsing="false" onAction="#buttonInit" text="Backspace" />
+            <Button fx:id="buttonAddSpeedTest" layoutX="23.0" layoutY="371.0" mnemonicParsing="false" onAction="#buttonInit" text="AddSpeedTest">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonGetSpeedTest" layoutX="133.0" layoutY="371.0" mnemonicParsing="false" onAction="#buttonInit" text="GetSpeedTest">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonDelSpeedTest" layoutX="242.0" layoutY="371.0" mnemonicParsing="false" onAction="#buttonInit" text="DelSpeedTest">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonHelp" layoutX="114.0" layoutY="414.0" mnemonicParsing="false" onAction="#buttonInit" text="help with this weird calc is not implemented yet">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

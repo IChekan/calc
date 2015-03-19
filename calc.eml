@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component inherit-compiler-output="true" inheritJdk="true">
 	<output-test url="file://$MODULE_DIR$/out/test/calc"/>
-	<exclude-output/>
-	<contentEntry url="file://$MODULE_DIR$"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<excludeFolder url="file://$MODULE_DIR$/out/production"/>
+	</contentEntry>
+	<levels>
+		<level name="Maven: org.apache.commons:commons-lang3:3.3.2" value="project"/>
+	</levels>
 </component>

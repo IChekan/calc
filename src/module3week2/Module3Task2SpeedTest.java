@@ -36,29 +36,30 @@ public class Module3Task2SpeedTest {
         }
 
         String stringForInsert = RandomStringUtils.randomAlphabetic(7);
+        Integer indexAddString = ThreadLocalRandom.current().nextInt(1, listsLength);
 
         //testing array speed
         long arrayStartTime = System.nanoTime();
-        arrayList.add(stringForInsert);
+        arrayList.add(indexAddString, stringForInsert);
         long arrayEndTime = System.nanoTime();
         long arrayDifference = arrayEndTime - arrayStartTime;
 
         //testing linked speed
         long linkedStartTime = System.nanoTime();
-        linkedList.add(stringForInsert);
+        linkedList.add(indexAddString, stringForInsert);
         long linkedEndTime = System.nanoTime();
         long linkedDifference = linkedEndTime - linkedStartTime;
 
         if (arrayDifference < linkedDifference) {
             long diff = linkedDifference - arrayDifference;
-            return "Array added element faster than Linked by " + diff + " nanoseconds";
+            return "Array added element #" + indexAddString + " faster than Linked by " + diff + " nanoseconds";
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked added element faster than Array by " + diff + " nanoseconds";
+            return "Linked get element #" + indexAddString + " faster than Array by " + diff + " nanoseconds";
         }
         else {
-            return "They ware equal...with time in nanoseconds = " + arrayDifference + "" ;
+            return "They were equal in element #" + indexAddString + "...with time in nanoseconds = " + arrayDifference + "";
         }
     }
 
@@ -97,9 +98,8 @@ public class Module3Task2SpeedTest {
             return "Linked get element #" + indexGetString + " faster than Array by " + diff + " nanoseconds";
         }
         else {
-            return "They ware equal in element #" + indexGetString + "...with time in nanoseconds = " + arrayDifference + "" ;
+            return "They were equal in element #" + indexGetString + "...with time in nanoseconds = " + arrayDifference + "" ;
         }
-
     }
 
     //testing deleting object from list
@@ -114,32 +114,31 @@ public class Module3Task2SpeedTest {
             linkedList.add(n, tempString);
         }
 
-        Integer indexGetString = ThreadLocalRandom.current().nextInt(1, listsLength);
+        Integer indexDelString = ThreadLocalRandom.current().nextInt(1, listsLength);
 
         //testing array del speed
         long arrayStartTime = System.nanoTime();
-        arrayList.remove(indexGetString);
+        arrayList.remove(indexDelString);
         long arrayEndTime = System.nanoTime();
         long arrayDifference = arrayEndTime - arrayStartTime;
 
         //testing linked del speed
         long linkedStartTime = System.nanoTime();
-        linkedList.remove(indexGetString);
+        linkedList.remove(indexDelString);
         long linkedEndTime = System.nanoTime();
         long linkedDifference = linkedEndTime - linkedStartTime;
 
         if (arrayDifference < linkedDifference) {
             long diff = linkedDifference - arrayDifference;
-            return "Array deleted element #" + indexGetString + " faster than Linked by " + diff + " nanoseconds";
+            return "Array deleted element #" + indexDelString + " faster than Linked by " + diff + " nanoseconds";
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked deleted element #" + indexGetString + " faster than Array by " + diff + " nanoseconds";
+            return "Linked deleted element #" + indexDelString + " faster than Array by " + diff + " nanoseconds";
         }
         else {
-            return "They ware equal in element #" + indexGetString + "...with time in nanoseconds = " + arrayDifference + "" ;
+            return "They were equal in element #" + indexDelString + "...with time in nanoseconds = " + arrayDifference + "" ;
         }
-
     }
 
 }

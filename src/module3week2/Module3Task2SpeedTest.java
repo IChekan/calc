@@ -56,7 +56,7 @@ public class Module3Task2SpeedTest {
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked get element #" + indexAddString + " faster than Array by " + diff + " nanoseconds";
+            return "Linked added element #" + indexAddString + " faster than Array by " + diff + " nanoseconds";
         }
         else {
             return "They were equal in element #" + indexAddString + "...with time in nanoseconds = " + arrayDifference + "";

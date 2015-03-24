@@ -52,11 +52,13 @@ public class Module3Task2SpeedTest {
 
         if (arrayDifference < linkedDifference) {
             long diff = linkedDifference - arrayDifference;
-            return "Array added element #" + indexAddString + " faster than Linked by " + diff + " nanoseconds";
+            float diffTimes = linkedDifference * 100 / arrayDifference;
+            return "Array added element #" + indexAddString + " faster than Linked by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked added element #" + indexAddString + " faster than Array by " + diff + " nanoseconds";
+            float diffTimes = arrayDifference * 100 / linkedDifference;
+            return "Linked added element #" + indexAddString + " faster than Array by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else {
             return "They were equal in element #" + indexAddString + "...with time in nanoseconds = " + arrayDifference + "";
@@ -91,11 +93,13 @@ public class Module3Task2SpeedTest {
 
         if (arrayDifference < linkedDifference) {
             long diff = linkedDifference - arrayDifference;
-            return "Array get element #" + indexGetString + " faster than Linked by " + diff + " nanoseconds";
+            float diffTimes = linkedDifference * 100 / arrayDifference;
+            return "Array get element #" + indexGetString + " faster than Linked by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked get element #" + indexGetString + " faster than Array by " + diff + " nanoseconds";
+            float diffTimes = arrayDifference * 100 / linkedDifference;
+            return "Linked get element #" + indexGetString + " faster than Array by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else {
             return "They were equal in element #" + indexGetString + "...with time in nanoseconds = " + arrayDifference + "" ;
@@ -130,11 +134,13 @@ public class Module3Task2SpeedTest {
 
         if (arrayDifference < linkedDifference) {
             long diff = linkedDifference - arrayDifference;
-            return "Array deleted element #" + indexDelString + " faster than Linked by " + diff + " nanoseconds";
+            float diffTimes = linkedDifference * 100 / arrayDifference;
+            return "Array deleted element #" + indexDelString + " faster than Linked by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else if (linkedDifference < arrayDifference){
             long diff = arrayDifference - linkedDifference;
-            return "Linked deleted element #" + indexDelString + " faster than Array by " + diff + " nanoseconds";
+            float diffTimes = arrayDifference * 100 / linkedDifference;
+            return "Linked deleted element #" + indexDelString + " faster than Array by " + diff + " nanoseconds or " + diffTimes + " persents.";
         }
         else {
             return "They were equal in element #" + indexDelString + "...with time in nanoseconds = " + arrayDifference + "" ;

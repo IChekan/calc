@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<GridPane alignment="center" hgap="10" prefHeight="515.0" prefWidth="361.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="module3week1.Module3Task1Calculator">
+<GridPane alignment="center" hgap="10" prefHeight="515.0" prefWidth="361.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="module3.week1.Task1Calculator">
    <children>
       <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="376.0">
          <children>
@@ -29,7 +29,7 @@
             <Button fx:id="buttonDivide" layoutX="287.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttonInit" text="/" />
             <Button fx:id="buttonMinus" layoutX="240.0" layoutY="304.0" mnemonicParsing="false" onAction="#buttonInit" text="-" />
             <Button fx:id="buttonPlus" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" onAction="#buttonInit" text="+" />
-            <Label fx:id="outputField" layoutX="36.0" layoutY="21.0" prefHeight="112.0" prefWidth="283.0" textAlignment="JUSTIFY" textFill="#534cc9" wrapText="true">
+            <Label fx:id="outputField" layoutX="36.0" layoutY="21.0" prefHeight="112.0" prefWidth="283.0" textFill="#534cc9" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

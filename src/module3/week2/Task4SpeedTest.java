@@ -1,4 +1,4 @@
-package module3week2;
+package module3.week2;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by Ihar_Chekan on 3/18/2015.
  */
-public class Module3Task2SpeedTest {
+public class Task4SpeedTest {
 
    // private static ArrayList arrayList = new ArrayList();
    // private static LinkedList linkedList = new LinkedList();

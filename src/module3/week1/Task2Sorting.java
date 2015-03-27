@@ -1,9 +1,9 @@
-package module3week1;
+package module3.week1;
 
 /**
  * Created by Ihar_Chekan on 3/18/2015.
  */
-public class Module3Task2Sorting {
+public class Task2Sorting {
 
     public static String[] sortArrayNumbers (String[] arrayInput) {
         sortArray(arrayInput);

@@ -1,4 +1,4 @@
-package module3.main;
+package module3.runner;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

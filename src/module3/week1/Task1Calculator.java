@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import module3.main.Navigator;
+import module3.runner.Navigator;
 import module3.week2.Task4SpeedTest;
 import org.apache.commons.lang3.StringUtils;
 

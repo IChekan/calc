@@ -8,21 +8,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="521.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="module3.week2.task3TaxiPark.MainTaxiPark">
+<AnchorPane fx:id="AnchorPane" prefHeight="521.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="module3.week2.task3TaxiPark.MainTaxiPark">
    <children>
-      <Button fx:id="switchBackToCalc" layoutX="233.0" layoutY="436.0" mnemonicParsing="false" onAction="#gotoCalcScene" text="SwitchBackToCalc" />
-      <Button fx:id="buttonAddCar" layoutX="32.0" layoutY="344.0" mnemonicParsing="false" onAction="#AddCarToList" prefHeight="31.0" prefWidth="145.0" text="AddCar" />
-      <Button fx:id="buttonCostAllCars" layoutX="196.0" layoutY="344.0" mnemonicParsing="false" onAction="#CostOfAllCars" prefHeight="31.0" prefWidth="145.0" text="Cost of All cars" />
-      <Button fx:id="buttonListAllCars" layoutX="32.0" layoutY="389.0" mnemonicParsing="false" onAction="#ListOfAllCarsSorted" prefHeight="31.0" prefWidth="310.0" text="List of All cars with fuel consuming sorting" />
-      <Button fx:id="buttonFindCar" layoutX="32.0" layoutY="436.0" mnemonicParsing="false" onAction="#SearchByCarModel" prefHeight="31.0" prefWidth="167.0" text="Find Car By Model" />
-      <TextField fx:id="fieldCarFuelConsuming" focusTraversable="false" layoutX="197.0" layoutY="261.0" prefHeight="31.0" prefWidth="145.0" promptText="Car fuel consuming" />
-      <TextField fx:id="fieldCarNumber" focusTraversable="false" layoutX="32.0" layoutY="304.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Number" />
-      <TextField fx:id="fieldCarCost" focusTraversable="false" layoutX="32.0" layoutY="261.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Cost" />
-      <TextField fx:id="fieldCarModel" focusTraversable="false" layoutX="197.0" layoutY="304.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Model" />
+      <Button fx:id="switchBackToCalc" layoutX="233.0" layoutY="421.0" mnemonicParsing="false" onAction="#gotoCalcScene" text="SwitchBackToCalc" />
+      <Button fx:id="buttonAddCar" layoutX="32.0" layoutY="336.0" mnemonicParsing="false" onAction="#AddCarToList" prefHeight="31.0" prefWidth="145.0" text="AddCar" />
+      <Button fx:id="buttonCostAllCars" layoutX="196.0" layoutY="336.0" mnemonicParsing="false" onAction="#CostOfAllCars" prefHeight="31.0" prefWidth="145.0" text="Cost of All cars" />
+      <Button fx:id="buttonListAllCars" layoutX="32.0" layoutY="378.0" mnemonicParsing="false" onAction="#ListOfAllCarsSorted" prefHeight="31.0" prefWidth="310.0" text="List of All cars with fuel consuming sorting" />
+      <Button fx:id="buttonFindCar" layoutX="32.0" layoutY="421.0" mnemonicParsing="false" onAction="#SearchByCarModel" prefHeight="31.0" prefWidth="145.0" text="Find Car By Model" />
+      <TextField fx:id="fieldCarFuelConsuming" focusTraversable="false" layoutX="196.0" layoutY="253.0" prefHeight="31.0" prefWidth="145.0" promptText="Car fuel consuming" />
+      <TextField fx:id="fieldCarNumber" focusTraversable="false" layoutX="32.0" layoutY="296.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Number" />
+      <TextField fx:id="fieldCarCost" focusTraversable="false" layoutX="32.0" layoutY="253.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Cost" />
+      <TextField fx:id="fieldCarModel" focusTraversable="false" layoutX="196.0" layoutY="296.0" prefHeight="31.0" prefWidth="145.0" promptText="Car Model" />
       <Label fx:id="fieldOutput" layoutX="32.0" layoutY="26.0" prefHeight="216.0" prefWidth="310.0" text="Output" textFill="#6369d7" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="Save" layoutX="32.0" layoutY="469.0" mnemonicParsing="false" onAction="#Save" text="Save" />
+      <Button fx:id="Load" layoutX="123.0" layoutY="469.0" mnemonicParsing="false" onAction="#Load" text="Load" />
+      <Button fx:id="LoadFromDataBase" layoutX="195.0" layoutY="469.0" mnemonicParsing="false" onAction="#LoadFromDataBase" text="LoadFromDataBase" />
    </children>
 </AnchorPane>

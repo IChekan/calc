@@ -6,7 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import module3.runner.Navigator;
+import module3.week3.Task2SaveLoad;
+import module3.week4.LoadFromDB;
+import module3.week4.LoadFromXml;
+import org.apache.commons.io.FilenameUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +52,15 @@ public class MainTaxiPark {
 
     @FXML
     private TextField fieldCarNumber;
+
+    @FXML
+    private Button Save;
+
+    @FXML
+    private Button Load;
+
+    @FXML
+    private Button LoadFromDataBase;
 
 
     //Doing on start
@@ -95,7 +109,7 @@ public class MainTaxiPark {
         List<CarModel> listAllCarsSorted = Util.Sort(listAllCars);
 
         for (CarModel list : listAllCarsSorted) {
-            out = out + "\n" + list.getCarInfo();
+            out += list.getCarInfo() + "\n";
         }
 
         fieldOutput.setText(out);
@@ -103,5 +117,45 @@ public class MainTaxiPark {
 
     public void SearchByCarModel(ActionEvent event) {
         fieldOutput.setText(Util.findByCarModel(fieldCarModel.getText(), listAllCars));
+    }
+
+    //was added for week3 task2 SaveLoad
+    public void Save (ActionEvent event) {
+        File file = Task2SaveLoad.saveFileDialog();
+        //convert to string
+        String stringToSave = Task2SaveLoad.ListToString(listAllCars);
+        //saving
+        Task2SaveLoad.WriteString(file.getPath(), stringToSave);
+
+        fieldOutput.setText("File " + file.getName() + " saved");
+    }
+
+    //was added for week3 task2 SaveLoad and modified for week4 hometask
+    public void Load (ActionEvent event) {
+        File file = Task2SaveLoad.loadFileDialog();
+        //clearing list
+        listAllCars.clear();
+        //gain extention of the file
+        String ext = FilenameUtils.getExtension(file.getName());
+        //loading from xml
+//        if ("xml" == ext){
+//            listAllCars = LoadFromXml.LoadXml(file.getPath());}
+//        //loading from plain file
+//        else {
+//            listAllCars = Task2SaveLoad.LoadTxt(file.getPath());}
+
+        listAllCars = LoadFromXml.LoadXml(file.getPath());
+
+        fieldOutput.setText("File " + file.getName() + " loaded");
+    }
+
+    //was added for week4 hometask
+    public void LoadFromDataBase (ActionEvent event) {
+        //clearing list
+        listAllCars.clear();
+        //loading
+        listAllCars = LoadFromDB.LoadDB();
+
+        fieldOutput.setText("Data from Database loaded!");
     }
 }

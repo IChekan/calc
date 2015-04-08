@@ -1,0 +1,20 @@
+<carlist>
+    <car>
+        <carmodel>Nissan</carmodel>
+        <carnumber>9876-UH7</carnumber>
+        <carfuelconsuming>7</carfuelconsuming>
+        <carcost>7000</carcost>
+    </car>
+    <car>
+        <carmodel>Mazda</carmodel>
+        <carnumber>8765-HG7</carnumber>
+        <carfuelconsuming>12</carfuelconsuming>
+        <carcost>2500</carcost>
+    </car>
+    <car>
+        <carmodel>Subaru</carmodel>
+        <carnumber>7654-FT7</carnumber>
+        <carfuelconsuming>9</carfuelconsuming>
+        <carcost>3400</carcost>
+    </car>
+</carlist>

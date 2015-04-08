@@ -138,13 +138,13 @@ public class MainTaxiPark {
         //gain extention of the file
         String ext = FilenameUtils.getExtension(file.getName());
         //loading from xml
-//        if ("xml" == ext){
-//            listAllCars = LoadFromXml.LoadXml(file.getPath());}
-//        //loading from plain file
-//        else {
-//            listAllCars = Task2SaveLoad.LoadTxt(file.getPath());}
-
-        listAllCars = LoadFromXml.LoadXml(file.getPath());
+        if (ext.equalsIgnoreCase("xml")){
+            listAllCars = LoadFromXml.LoadXml(file.getPath());
+        }
+        //loading from plain file
+        else {
+            listAllCars = Task2SaveLoad.LoadTxt(file.getPath());
+        }
 
         fieldOutput.setText("File " + file.getName() + " loaded");
     }

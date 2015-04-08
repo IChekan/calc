@@ -37,14 +37,14 @@ public class LoadFromDB {
     private static void StartDriverAndConnection (){
         try {
             Class.forName(driverName);
-            System.out.println("OK !!!!");
+            System.out.println("JDBC driver found");
         } catch (ClassNotFoundException e) {
-            System.out.println("Mysql JDBC driver not found");
+            System.out.println("Postgresql JDBC driver not found");
         }
 
         try {
             con = DriverManager.getConnection(databaseURL, user, password);
-            System.out.println("Connect");
+            System.out.println("Connection established");
         } catch (SQLException e) {
             System.out.println("SQLException " + e.getMessage());
         }

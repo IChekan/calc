@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import module3.runner.Navigator;
+import module3.week3.Task1Exceptions.AddCarToListException;
+import module3.week3.Task1Exceptions.FindByModelException;
 import module3.week3.Task2SaveLoad;
 import module3.week4.LoadFromDB;
 import module3.week4.LoadFromXml;
@@ -79,15 +81,27 @@ public class MainTaxiPark {
     }
 
     @FXML
-    public void AddCarToList(ActionEvent event){
-        Double carCost = Double.parseDouble(fieldCarCost.getText());
-        String carNumber = fieldCarNumber.getText();
-        Double carFuelConsuming = Double.parseDouble(fieldCarFuelConsuming.getText());
-        String carModel = fieldCarModel.getText();
+    public void AddCarToList(ActionEvent event) throws AddCarToListException{
 
-        listAllCars.add(new CarModel(carModel, carNumber, carFuelConsuming, carCost));
+        try {
+            if (fieldCarCost.getText().equalsIgnoreCase("") || fieldCarNumber.getText().equalsIgnoreCase("") || fieldCarFuelConsuming.getText().equalsIgnoreCase("")
+                    || fieldCarModel.getText().equalsIgnoreCase("")) {
+                throw new AddCarToListException();
+            }
 
-        fieldOutput.setText("Car with number #" + carNumber + " added to list");
+            Double carCost = Double.parseDouble(fieldCarCost.getText());
+            String carNumber = fieldCarNumber.getText();
+            Double carFuelConsuming = Double.parseDouble(fieldCarFuelConsuming.getText());
+            String carModel = fieldCarModel.getText();
+
+            listAllCars.add(new CarModel(carModel, carNumber, carFuelConsuming, carCost));
+
+            fieldOutput.setText("Car with number #" + carNumber + " added to list");
+
+        }catch (NumberFormatException | AddCarToListException e) {
+            fieldOutput.setText(AddCarToListException.getAddCarToListException());
+        }
+
 
         //clearing fields
         fieldCarCost.setText("");
@@ -116,7 +130,11 @@ public class MainTaxiPark {
     }
 
     public void SearchByCarModel(ActionEvent event) {
-        fieldOutput.setText(Util.findByCarModel(fieldCarModel.getText(), listAllCars));
+        try {
+            fieldOutput.setText(Util.findByCarModel(fieldCarModel.getText(), listAllCars));
+        } catch (FindByModelException e) {
+            fieldOutput.setText(e.getFindByNameException());
+        }
     }
 
     //was added for week3 task2 SaveLoad

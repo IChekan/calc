@@ -1,5 +1,7 @@
 package module3.week2.task3TaxiPark;
 
+import module3.week3.Task1Exceptions.FindByModelException;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  */
 public class Util {
 
-    public static List<CarModel> Sort(List<CarModel> listToSort) {
+    public static List<CarModel> Sort(List<CarModel> listToSort){
         Collections.sort(listToSort, new Comparator<CarModel>() {
             @Override
             public int compare(CarModel o1, CarModel o2) {
@@ -19,12 +21,15 @@ public class Util {
         return listToSort;
     }
 
-    public static String findByCarModel(String searchValue, List<CarModel> list) {
+    public static String findByCarModel(String searchValue, List<CarModel> list) throws FindByModelException {
         String out = "";
         for (CarModel carList : list) {
             if(searchValue.equals(carList.getCarModel())){
                 out = out + carList.getCarInfo() + "\n";
             }
+        }
+        if(out.equalsIgnoreCase("")) {
+            throw new FindByModelException(searchValue);
         }
         return out;
     }

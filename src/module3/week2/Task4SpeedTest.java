@@ -1,5 +1,7 @@
 package module3.week2;
 
+import module3.week3.Task1Exceptions.FindByModelException;
+import module3.week3.Task1Exceptions.SpeedTestException;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.ArrayList;
@@ -24,7 +26,12 @@ public class Task4SpeedTest {
 //    }
 
     //testing adding element to lists
-    public static String testAddElement (Integer listsLength) {
+    public static String testAddElement (Integer listsLength) throws SpeedTestException{
+        //Added Exception
+        if(listsLength < 3 ) {
+            throw new SpeedTestException();
+        }
+
         //generateLists(listsLength);
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();
@@ -66,7 +73,12 @@ public class Task4SpeedTest {
     }
 
     //testing get object from list
-    public static String testGetElement (Integer listsLength) {
+    public static String testGetElement (Integer listsLength) throws SpeedTestException{
+        //Added Exception
+        if(listsLength < 3 ) {
+            throw new SpeedTestException();
+        }
+
         //generateLists(listsLength);
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();
@@ -107,7 +119,12 @@ public class Task4SpeedTest {
     }
 
     //testing deleting object from list
-    public static String testDelElement (Integer listsLength) {
+    public static String testDelElement (Integer listsLength) throws SpeedTestException{
+        //Added Exception
+        if(listsLength < 3 ) {
+            throw new SpeedTestException();
+        }
+
         //generateLists(listsLength);
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();

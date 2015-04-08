@@ -7,6 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import module3.runner.Navigator;
 import module3.week2.Task4SpeedTest;
+import module3.week3.Task1Exceptions.SpeedTestException;
 import org.apache.commons.lang3.StringUtils;
 
 public class Task1Calculator {
@@ -63,7 +64,7 @@ public class Task1Calculator {
     @FXML
     Button buttonTaxiPark;
 
-    private String input = "";
+    private String input = "0";
     private String result = "0";
     private String math = "na";
     private float floatA = 0;
@@ -136,7 +137,7 @@ public class Task1Calculator {
 
     // clear button action
     private void buttonClearAction () {
-        input = "";
+        input = "0";
         result = "0";
         inputField.setText(input);
         outputField.setText("cleared");
@@ -211,22 +212,34 @@ public class Task1Calculator {
 
     //was added for module3 week2 2nd task hometask
     private void buttonAddSpeedTestAction () {
-        Integer listsLength = new Integer(input);
-        result = Task4SpeedTest.testAddElement(listsLength);
+        try {
+            Integer listsLength = new Integer(input);
+            result = Task4SpeedTest.testAddElement(listsLength);
+        } catch (SpeedTestException e) {
+            result = SpeedTestException.getSpeedTestException();
+        }
         outputField.setText(result);
     }
 
     //was added for module3 week2 2nd task hometask
     private void buttonGetSpeedTestAction () {
-        Integer listsLength = new Integer(input);
-        result = Task4SpeedTest.testGetElement(listsLength);
+        try {
+            Integer listsLength = new Integer(input);
+            result = Task4SpeedTest.testGetElement(listsLength);
+        } catch (SpeedTestException e) {
+            result = SpeedTestException.getSpeedTestException();
+        }
         outputField.setText(result);
     }
 
     //was added for module3 week2 2nd task hometask
     private void buttonDelSpeedTestAction () {
-        Integer listsLength = new Integer(input);
-        result = Task4SpeedTest.testDelElement(listsLength);
+        try {
+            Integer listsLength = new Integer(input);
+            result = Task4SpeedTest.testDelElement(listsLength);
+        } catch (SpeedTestException e) {
+            result = SpeedTestException.getSpeedTestException();
+        }
         outputField.setText(result);
     }
 

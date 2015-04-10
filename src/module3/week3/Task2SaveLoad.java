@@ -4,6 +4,7 @@ package module3.week3;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import module3.week2.task3TaxiPark.CarModel;
+import module3.week4.AbstractLoad;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by Ihar_Chekan on 4/3/2015.
  */
-public class Task2SaveLoad {
+public class Task2SaveLoad extends AbstractLoad {
 
     public static File loadFileDialog() {
         FileChooser chooser = new FileChooser();
@@ -57,7 +58,8 @@ public class Task2SaveLoad {
         }
     }
 
-    public static List<CarModel> LoadTxt(String fullPath) {
+    @Override
+    public List<CarModel> Load(String fullPath) {
 
         File file = new File(fullPath);
         List<CarModel> loadedList = new ArrayList<>();

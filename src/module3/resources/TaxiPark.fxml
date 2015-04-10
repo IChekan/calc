@@ -25,7 +25,6 @@
          </font>
       </Label>
       <Button fx:id="Save" layoutX="32.0" layoutY="469.0" mnemonicParsing="false" onAction="#Save" text="Save" />
-      <Button fx:id="Load" layoutX="123.0" layoutY="469.0" mnemonicParsing="false" onAction="#Load" text="Load" />
-      <Button fx:id="LoadFromDataBase" layoutX="195.0" layoutY="469.0" mnemonicParsing="false" onAction="#LoadFromDataBase" text="LoadFromDataBase" />
+      <Button fx:id="Load" layoutX="123.0" layoutY="469.0" mnemonicParsing="false" onAction="#Load" text="Load From txt/hml/db" />
    </children>
 </AnchorPane>

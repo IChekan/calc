@@ -102,7 +102,6 @@ public class MainTaxiPark {
             fieldOutput.setText(AddCarToListException.getAddCarToListException());
         }
 
-
         //clearing fields
         fieldCarCost.setText("");
         fieldCarFuelConsuming.setText("");
@@ -150,30 +149,32 @@ public class MainTaxiPark {
 
     //was added for week3 task2 SaveLoad and modified for week4 hometask
     public void Load (ActionEvent event) {
+        String outText = "";
         File file = Task2SaveLoad.loadFileDialog();
         //clearing list
         listAllCars.clear();
         //gain extention of the file
         String ext = FilenameUtils.getExtension(file.getName());
+
         //loading from xml
         if (ext.equalsIgnoreCase("xml")){
-            listAllCars = LoadFromXml.LoadXml(file.getPath());
+            LoadFromXml loadFromXml = new LoadFromXml();
+            listAllCars = loadFromXml.Load(file.getPath());
+            outText = "XML file" + file.getName() + "loaded!";
+        }
+        //loading from database
+        else if (ext.equals("db")){
+            LoadFromDB loadFromDb = new LoadFromDB();
+            listAllCars = loadFromDb.Load(file.getPath());
+            outText = "Data from PostgreSQL with connection properties, defined in " + file.getName() + " file loaded!";
         }
         //loading from plain file
         else {
-            listAllCars = Task2SaveLoad.LoadTxt(file.getPath());
+            Task2SaveLoad loadFromTxt = new Task2SaveLoad();
+            listAllCars = loadFromTxt.Load(file.getPath());
+            outText = "File" + file.getName() + "loaded!";
         }
 
-        fieldOutput.setText("File " + file.getName() + " loaded");
-    }
-
-    //was added for week4 hometask
-    public void LoadFromDataBase (ActionEvent event) {
-        //clearing list
-        listAllCars.clear();
-        //loading
-        listAllCars = LoadFromDB.LoadDB();
-
-        fieldOutput.setText("Data from Database loaded!");
+        fieldOutput.setText(outText);
     }
 }

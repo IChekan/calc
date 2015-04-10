@@ -13,28 +13,30 @@ import java.util.Properties;
 /**
  * Created by Ihar_Chekan on 4/4/2015.
  */
-public class LoadFromDB {
-
-    private static final String DATABASE_PROPERTIES = "src/module3/resources/database.prop";
+public class LoadFromDB extends AbstractLoad{
 
     static Properties pr = new Properties();
 
-    static {
-        try {
-            FileInputStream inp = new FileInputStream(DATABASE_PROPERTIES);
-            pr.load(inp);
-            inp.close();
-        } catch (IOException e) {e.printStackTrace();}
-    }
-
-    static String databaseURL = pr.getProperty("dbURL");
-    static String user = pr.getProperty("user");
-    static String password = pr.getProperty("password");
-    static String driverName = pr.getProperty("driver");
+    static String databaseURL;
+    static String user;
+    static String password;
+    static String driverName;
 
     private static Connection con = null;
 
-    private static void StartDriverAndConnection (){
+    private void SetDatabaseProperties(String fullPath){
+        try {
+            FileInputStream inp = new FileInputStream(fullPath);
+            pr.load(inp);
+            inp.close();
+        } catch (IOException e) {e.printStackTrace();}
+        databaseURL = pr.getProperty("dbURL");
+        user = pr.getProperty("user");
+        password = pr.getProperty("password");
+        driverName = pr.getProperty("driver");
+    }
+
+    private void StartDriverAndConnection (){
         try {
             Class.forName(driverName);
             System.out.println("JDBC driver found");
@@ -50,7 +52,9 @@ public class LoadFromDB {
         }
     }
 
-    public static List<CarModel> LoadDB() {
+    @Override
+    public List<CarModel> Load(String fullPath) {
+        SetDatabaseProperties(fullPath);
         StartDriverAndConnection();
 
         Statement stmt = null;

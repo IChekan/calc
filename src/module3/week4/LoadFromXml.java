@@ -14,9 +14,10 @@ import java.util.List;
 /**
  * Created by Ihar_Chekan on 4/7/2015.
  */
-public class LoadFromXml {
+public class LoadFromXml extends AbstractLoad{
 
-    public static List<CarModel> LoadXml(String fullPath) {
+    @Override
+    public List<CarModel> Load(String fullPath) {
 
         List<String> loadedListString = null;
         SAXParserFactory spfac = SAXParserFactory.newInstance();
@@ -33,7 +34,7 @@ public class LoadFromXml {
         return StringToList(loadedListString);
     }
 
-    private static List<CarModel> StringToList (List<String> inputString) {
+    private List<CarModel> StringToList (List<String> inputString) {
         List<CarModel> loadedList = new ArrayList<>();
 
         for (String s : inputString) {

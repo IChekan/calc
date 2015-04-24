@@ -10,7 +10,7 @@ public class Task2Sorting {
         return arrayInput;
     }
 
-    public static void sortArray(String[] arr) {
+    private static void sortArray(String[] arr) {
         boolean swapped = false;
         do {
             swapped = false;
@@ -23,7 +23,7 @@ public class Task2Sorting {
         } while (swapped);
     }
 
-    public static void swap(String[] arr, int index0, int index1) {
+    private static void swap(String[] arr, int index0, int index1) {
         String temp = arr[index0];
         arr[index0] = arr[index1];
         arr[index1] = temp;

@@ -15,8 +15,8 @@ import org.junit.runners.Suite;
  * Created by Ihar_Chekan on 4/23/2015.
  */
 
-//@RunWith(Suite.class)
-@RunWith(Categories.class)
+@RunWith(Suite.class)
+//@RunWith(Categories.class)
 @Categories.IncludeCategory(FirstInterface.class)
 @Categories.ExcludeCategory(SecondInterface.class)
 @Suite.SuiteClasses({TestSorting.class, TestSpeed.class, TestListToString.class})

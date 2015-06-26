@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite verbose="1" name="Some sample test"
+       skipfailedinvocationcounts="false" junit="false" parallel="false"
+       data-provider-thread-count="1" annotations="JDK">
+
+    <parameter name="suiteOwner" value="ichekan"/>
+
+    <test verbose="1" name="Sample Test" preserve-order="true">
+        <parameter name="result" value="14.0"/>
+
+
+        <classes>
+            <class name="module6.week1.tests.SampleTest" />
+        </classes>
+    </test>
+</suite>

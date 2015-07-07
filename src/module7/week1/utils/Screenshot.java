@@ -18,7 +18,8 @@ public class Screenshot {
 
     Logger log = Logger.getLogger(Screenshot.class);
 
-    public void makeScreenshot() {
+    public void makeScreenshot() throws Exception {
+        Thread.sleep(2000);
         try {
             File screenshot = ((TakesScreenshot) DriverSingletonFirefox.getDriverSingletonFirefoxInstance()).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFileToDirectory(screenshot, new File("screenshots"));

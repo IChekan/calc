@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite verbose="1" name="Login Test"
+       skipfailedinvocationcounts="false" junit="false" parallel="false"
+       data-provider-thread-count="1" annotations="JDK">
+
+    <parameter name="suiteOwner" value="ichekan"/>
+
+    <test verbose="1" name="Login Test" preserve-order="true">
+        <parameter name="username" value="admin"/>
+        <parameter name="password" value="password"/>
+
+        <classes>
+            <class name="module7.week1.tests.LoginTest" />
+        </classes>
+    </test>
+</suite>

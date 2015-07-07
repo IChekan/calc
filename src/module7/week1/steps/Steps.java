@@ -26,10 +26,9 @@ public class Steps {
         LoginPage loginPage = new LoginPage(driver);
         screenshot.makeScreenshot();
         loginPage.enterLoginPassword(login, pass);
- //       Thread.sleep(2000);
         screenshot.makeScreenshotWithHighlightElement(loginPage.fieldPassword);
         loginPage.clickLoginButton();
-        screenshot.makeScreenshot();
+
         loginPage.isLoggedSuccessfully();
         screenshot.makeScreenshot();
         log.info("Logged in as " + login);
